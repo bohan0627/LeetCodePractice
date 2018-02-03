@@ -33,8 +33,9 @@ public class VParentheses {
     public static void main(String[] args)
     {
         String s = " ";
+        String s1 = "{[]}"
         boolean status;
-        status = VParentheses.valid(s);
+        status = VParentheses.valid(s1);
         System.out.println(status);
 
 
