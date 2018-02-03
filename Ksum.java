@@ -1,6 +1,9 @@
 import java.util.LinkedList;
 import java.util.List;
 
+//KVal refers to the K: total numbers which used to get the target
+
+
 public class Ksum {
     private List<List<Integer>> kSum(int kVal, int target, int startIndex, int[] nums )
     {
