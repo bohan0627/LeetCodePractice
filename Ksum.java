@@ -31,4 +31,10 @@ public class Ksum {
         }
         return result;
     }
+    public static void main(String[] args){
+        int[] array = {1,0,-1,0,-2,2};
+        List<List<Integer>> res = FourSum.fSum(4,0,0,array);
+        for(List<Integer> it:res){
+            System.out.print(it);
+        }
 }
