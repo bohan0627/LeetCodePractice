@@ -2,37 +2,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Permutations {
-    public List<List<Integer>> permute(int[] num) {
-        List<List<Integer>> result = new ArrayList<>();
-
-        //start from an empty list
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
         List<Integer> empty = new ArrayList<>();
-        result.add(empty);
+        res.add(empty);
 
-        for (int i = 0; i < num.length; i++) {
-            //list of list in current iteration of the array num
+        for(int i=0;i<nums.length;i++ )
+        {
             List<List<Integer>> current = new ArrayList<>();
-
-            for (List<Integer> l : result) {
-                // # of locations to insert is largest index + 1
-                for (int j = 0; j < l.size()+1; j++) {
-                    // + add num[i] to different locations
-                    l.add(j, num[i]);
-
+            for(List<Integer> l:res){
+                for(int j=0;j<l.size()+1;j++){
+                    l.add(j,nums[i]);
                     List<Integer> temp = new ArrayList<>(l);
                     current.add(temp);
-
-                    //System.out.println(temp);
-
-                    // - remove num[i] add
                     l.remove(j);
                 }
             }
-
-            result = new ArrayList<>(current);
+            res = new ArrayList<>(current);
         }
-
-        return result;
+        return res;
     }
 
     public static void main(String[] args){
